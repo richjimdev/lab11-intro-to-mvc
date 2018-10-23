@@ -11,7 +11,7 @@ namespace FirstMVCApp.Controllers
         [HttpGet]
         public ViewResult Index()
         {
-            // Looks for the Razor View Page located in
+            // Looks for the Razor View Page located in 
             // Views -> Home -> Index.cshtml
             return View();
         }
