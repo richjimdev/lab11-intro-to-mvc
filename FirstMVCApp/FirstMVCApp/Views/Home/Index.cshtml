@@ -1,15 +1,19 @@
 ﻿<head>
-    <link href="~/StyleSheet.css" />
+    <link href="~/StyleSheet.css"  rel="stylesheet" />
 </head>
 <body>
-    <form method="post">
-        <label for="begYear">Starting Year: </label>
-        <input type="number" placeholder="Starting Year" name="begYear" id="begYear" />
+    <div class="content">
+        <h1 class="main-title">TIME</h1>
+        <p>Enter a year range to list People for those years.</p>
+        <form method="post">
+            <label for="begYear">Starting Year: </label>
+            <input type="number" placeholder="Starting Year" name="begYear" id="begYear" />
 
-        <label for="endYear">Ending Year: </label>
-        <input type="number" placeholder="Ending Year" name="endYear" id="endYear" />
+            <label for="endYear">Ending Year: </label>
+            <input type="number" placeholder="Ending Year" name="endYear" id="endYear" />
 
-        <button type="submit">Get Results!</button>
+            <button type="submit">Get Results!</button>
 
-    </form>
+        </form>
+    </div>
 </body>
