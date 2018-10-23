@@ -9,61 +9,38 @@ namespace FirstMVCApp.Controllers
 {
     public class HomeController : Controller
     {
+        /// <summary>
+        /// Retrieves main Index page for root route
+        /// </summary>
+        /// <returns>Returns the Index.cshtml page</returns>
         [HttpGet]
         public ViewResult Index()
         {
-            // Looks for the Razor View Page located in 
-            // Views -> Home -> Index.cshtml
             return View();
         }
+
         /// <summary>
-        /// Post action for form submission of student information
+        /// Grabs data from our form and redirects to the Result action
         /// </summary>
-        /// <param name="studentName">name of student</param>
-        /// <param name="studentAge">Age of Student</param>
-        /// <returns>Redirect to the Results of student information</returns>
+        /// <param name="begYear">First year of range selected by user</param>
+        /// <param name="endYear">Last year of range selected by user</param>
+        /// <returns>An IActionResult redirect to Result aciton</returns>
         [HttpPost]
         public IActionResult Index(int begYear, int endYear)
         {
-            // Redirect to another Action. 
-            // we create a 
             return RedirectToAction("Result", new { begYear, endYear });
         }
 
         /// <summary>
-        /// Output the results of the Student Information
+        /// Renders the Result page using the data we grabbed from our csv file
         /// </summary>
-        /// <param name="studentName">name of student</param>
-        /// <param name="studentAge">Age of student</param>
-        /// <returns>Generated View of Result Action</returns>
+        /// <param name="begYear">Starting year range, sent by user</param>
+        /// <param name="endYear">Ending year range, sent by user</param>
+        /// <returns>The result view</returns>
         public ViewResult Result(int begYear, int endYear)
         {
             List<TimePerson> result = TimePerson.GetPersons(begYear, endYear);
             return View(result);
         }
-
-        //public ViewResult Class()
-        //{
-        //    Student student = new Student();
-        //    student.Name = "Nancy";
-        //    student.Age = 18;
-
-        //    Student s1 = new Student();
-        //    s1.Name = "Amanda";
-        //    s1.Age = 50;
-
-        //    Student s2 = new Student();
-        //    s2.Name = "Molly";
-        //    s2.Age = 18;
-
-        //    Student s3 = new Student();
-        //    s3.Name = "Jeff";
-        //    s3.Age = 22;
-
-        //    List<Student> myStudents = new List<Student> { student, s1, s2, s3 };
-
-
-        //    return View(myStudents);
-        //}
     }
 }

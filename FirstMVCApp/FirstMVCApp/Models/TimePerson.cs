@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace FirstMVCApp.Models
 {
+    /// <summary>
+    /// Class to hold informaton about our Person of the Year
+    /// </summary>
     public class TimePerson
     {
         public int Year { get; set; }
