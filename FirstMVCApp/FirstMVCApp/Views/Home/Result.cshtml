@@ -1,0 +1,11 @@
+﻿@model List<FirstMVCApp.Models.TimePerson>
+
+<h1>Hello</h1>
+
+@foreach (var item in Model)
+{
+    <h3>@item.Category</h3>
+    <h3>@item.Name</h3>
+    <h4>Birth: @item.Birth_Year </h4>
+    <h4>Birth: @item.DeathYear </h4>
+}

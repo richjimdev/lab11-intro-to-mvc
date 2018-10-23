@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FirstMVCApp.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +22,13 @@ namespace FirstMVCApp.Controllers
         /// <param name="studentName">name of student</param>
         /// <param name="studentAge">Age of Student</param>
         /// <returns>Redirect to the Results of student information</returns>
-        //[HttpPost]
-        //public IActionResult Index(string studentName, int studentAge)
-        //{
-        //    // Redirect to another Action. 
-        //    // we create a 
-        //    return RedirectToAction("Result", new { studentName, studentAge });
-        //}
+        [HttpPost]
+        public IActionResult Index(int begYear, int endYear)
+        {
+            // Redirect to another Action. 
+            // we create a 
+            return RedirectToAction("Result", new { begYear, endYear });
+        }
 
         /// <summary>
         /// Output the results of the Student Information
@@ -35,13 +36,11 @@ namespace FirstMVCApp.Controllers
         /// <param name="studentName">name of student</param>
         /// <param name="studentAge">Age of student</param>
         /// <returns>Generated View of Result Action</returns>
-        //public ViewResult Result(string studentName, int studentAge)
-        //{
-        //    Student student = new Student();
-        //    student.Name = studentName;
-        //    student.Age = studentAge;
-        //    return View(student);
-        //}
+        public ViewResult Result(int begYear, int endYear)
+        {
+            List<TimePerson> result = TimePerson.GetPersons(begYear, endYear);
+            return View(result);
+        }
 
         //public ViewResult Class()
         //{
