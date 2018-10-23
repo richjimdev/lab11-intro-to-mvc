@@ -12,3 +12,7 @@
 .content {
     border: 10px solid red;
 }
+
+tr:nth-child(even) {
+    background-color: #808080;
+}
