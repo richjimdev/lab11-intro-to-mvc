@@ -1,5 +1,5 @@
 # Lab11: Intro to MVC
-This repo constains a web app built in .NET core using MVC principles. The web page features People magazine's People of the year and allows the user to filter people by a year range.
+This repo constains a web app built in .NET core using MVC principles. The web page features Time magazine's people of the year and allows the user to filter people by a year range.
 
 ## What it looks like 
 ![](screencap1.JPG)
